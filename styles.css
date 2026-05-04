@@ -18,3 +18,72 @@
 .hero-overlay {
   background: rgba(0, 0, 0, 0.45);
 }
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 92vh;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 38, 110, 0.88),
+    rgba(0, 56, 168, 0.62),
+    rgba(0, 0, 0, 0.45)
+  );
+}
+
+.hero-watermark {
+  position: absolute;
+  right: -8%;
+  bottom: 5%;
+  width: 58vw;
+  max-width: 850px;
+  opacity: 0.08;
+  filter: brightness(0) invert(1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.animated-hero .eyebrow,
+.animated-hero h1,
+.animated-hero .hero-copy,
+.animated-hero .hero-actions {
+  opacity: 0;
+  transform: translateY(22px);
+  animation: riseIn 0.8s ease forwards;
+}
+
+.animated-hero h1 {
+  animation-delay: 0.15s;
+}
+
+.animated-hero .hero-copy {
+  animation-delay: 0.3s;
+}
+
+.animated-hero .hero-actions {
+  animation-delay: 0.45s;
+}
+
+@keyframes riseIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
